@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://hqutu5pi2m5t"]
+
+[ext_resource type="Texture2D" uid="uid://bblqrj3qlvh4j" path="res://icon.svg" id="1_iovl3"]
+[ext_resource type="Script" uid="uid://ddoul34pwvvtu" path="res://scripts/dash_boots.gd" id="1_wa405"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2d62"]
+size = Vector2(40, 40)
+
+[node name="DashBoots" type="Area2D" unique_id=1132884219]
+script = ExtResource("1_wa405")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=287628168]
+shape = SubResource("RectangleShape2D_w2d62")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1787443165]
+modulate = Color(1, 0.9647059, 0, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_iovl3")
