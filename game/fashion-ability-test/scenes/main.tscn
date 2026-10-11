@@ -3,12 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://2w3xg7jxk0qa" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://hqutu5pi2m5t" path="res://scenes/dash_boots.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://dc02fryl0hi5q" path="res://scripts/fall_reset.gd" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://bblqrj3qlvh4j" path="res://icon.svg" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://bh5m07n3lrn3t" path="res://scripts/goal.gd" id="4_tbgi4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2d62"]
 size = Vector2(400, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adck8"]
 size = Vector2(1152, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vv4sj"]
+size = Vector2(60, 80)
 
 [node name="Main" type="Node2D" unique_id=172619777]
 
@@ -36,3 +41,22 @@ script = ExtResource("3_sugp2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallReset" unique_id=379387292]
 shape = SubResource("RectangleShape2D_adck8")
+
+[node name="Goal" type="Area2D" parent="." unique_id=752407414]
+position = Vector2(980, 440)
+script = ExtResource("4_tbgi4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=1232022359]
+shape = SubResource("RectangleShape2D_vv4sj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=637843013]
+modulate = Color(0.003921569, 1, 0.38431373, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_jyhfs")
+
+[node name="Label" type="Label" parent="Goal" unique_id=138310780]
+offset_left = -21.0
+offset_top = -39.0
+offset_right = 23.0
+offset_bottom = -16.0
+text = "GOAL"
