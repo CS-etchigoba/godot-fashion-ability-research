@@ -2,20 +2,37 @@
 
 [ext_resource type="PackedScene" uid="uid://2w3xg7jxk0qa" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://hqutu5pi2m5t" path="res://scenes/dash_boots.tscn" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://dc02fryl0hi5q" path="res://scripts/fall_reset.gd" id="3_sugp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2d62"]
-size = Vector2(900, 40)
+size = Vector2(400, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adck8"]
+size = Vector2(1152, 200)
 
 [node name="Main" type="Node2D" unique_id=172619777]
 
 [node name="Player" parent="." unique_id=1430024720 instance=ExtResource("1_o5qli")]
-position = Vector2(200, 300)
-
-[node name="Floor" type="StaticBody2D" parent="." unique_id=1795064288]
-position = Vector2(450, 500)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=37980660]
-shape = SubResource("RectangleShape2D_w2d62")
+position = Vector2(100, 300)
 
 [node name="DashBoots" parent="." unique_id=1132884219 instance=ExtResource("2_0wfyh")]
-position = Vector2(500, 450)
+position = Vector2(300, 450)
+
+[node name="LeftFloor" type="StaticBody2D" parent="." unique_id=1795064288]
+position = Vector2(200, 500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftFloor" unique_id=37980660]
+shape = SubResource("RectangleShape2D_w2d62")
+
+[node name="RightFloor" type="StaticBody2D" parent="." unique_id=1206729839]
+position = Vector2(860, 500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightFloor" unique_id=104832632]
+shape = SubResource("RectangleShape2D_w2d62")
+
+[node name="FallReset" type="Area2D" parent="." unique_id=150416032]
+position = Vector2(576, 650)
+script = ExtResource("3_sugp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallReset" unique_id=379387292]
+shape = SubResource("RectangleShape2D_adck8")
