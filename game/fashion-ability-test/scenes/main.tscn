@@ -29,11 +29,27 @@ position = Vector2(200, 500)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftFloor" unique_id=37980660]
 shape = SubResource("RectangleShape2D_w2d62")
 
+[node name="FloorVisual" type="ColorRect" parent="LeftFloor" unique_id=1133715971]
+z_index = -1
+offset_left = -200.0
+offset_top = -20.0
+offset_right = 200.0
+offset_bottom = 20.0
+color = Color(0.61960787, 0.34901962, 1, 1)
+
 [node name="RightFloor" type="StaticBody2D" parent="." unique_id=1206729839]
 position = Vector2(860, 500)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightFloor" unique_id=104832632]
 shape = SubResource("RectangleShape2D_w2d62")
+
+[node name="FloorVisual" type="ColorRect" parent="RightFloor" unique_id=1796927451]
+z_index = -1
+offset_left = -200.0
+offset_top = -20.0
+offset_right = 200.0
+offset_bottom = 20.0
+color = Color(0.61960787, 0.34901962, 1, 1)
 
 [node name="FallReset" type="Area2D" parent="." unique_id=150416032]
 position = Vector2(576, 650)
@@ -60,3 +76,17 @@ offset_top = -39.0
 offset_right = 23.0
 offset_bottom = -16.0
 text = "GOAL"
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=632221396]
+
+[node name="Label" type="Label" parent="UI" unique_id=1388213725]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 392.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 22
+text = "A/D or Arrow Keys: Move
+Space: Jump
+Shift: Dash
+
+Collect the gold Dash Boots, then cross the gap!"
